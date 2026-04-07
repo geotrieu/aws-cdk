@@ -46,7 +46,7 @@
   },
   "cdk-package": {
     "pre": [
-      "/bin/bash ./scripts/minify-sources.sh"
+      "chunkify --clean"
     ]
   },
   "pkglint": {

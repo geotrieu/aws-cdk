@@ -10,5 +10,6 @@ export {
   generateEntryPoints,
   copySupportingFiles,
   cleanSourceFiles,
+  minifySource,
 } from './combine';
 export type { CollectedFiles, CombineResult } from './combine';

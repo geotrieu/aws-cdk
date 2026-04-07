@@ -1,4 +1,5 @@
 import * as path from 'path';
+import { transformSync } from 'esbuild';
 import type { IFilesystemHost } from './fs-host';
 
 export interface CollectedFiles {
@@ -231,7 +232,7 @@ export function combineSubmodule(host: IFilesystemHost, submoduleDir: string, su
 
   const outBase = outputDir ? path.join(outputDir, submoduleName) : submoduleDir;
   const outputPath = path.join(outBase, 'index.combined.js');
-  const content = generateCombinedSource(submoduleName, modules);
+  const content = minifySource(generateCombinedSource(submoduleName, modules));
   host.writeFile(outputPath, content);
 
   if (outputDir) {
@@ -335,4 +336,18 @@ export function copySupportingFiles(host: IFilesystemHost, root: string, outputD
     count++;
   }
   return count;
+}
+
+/**
+ * Minify JavaScript source using esbuild.
+ * Uses whitespace and syntax minification only — identifiers are preserved
+ * so that the module registry keys and runtime infrastructure remain intact.
+ */
+export function minifySource(source: string): string {
+  const result = transformSync(source, {
+    minifyWhitespace: true,
+    minifySyntax: true,
+    keepNames: true,
+  });
+  return result.code;
 }
