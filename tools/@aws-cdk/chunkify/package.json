@@ -1,0 +1,37 @@
+{
+  "name": "@aws-cdk/chunkify",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A tool for combining JavaScript files together for import speed",
+  "bin": {
+    "chunkify": "bin/chunkify"
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "build+test": "npm run build && npm run test",
+    "lint": "eslint",
+    "package": "mkdir -p dist/js && mv $(npm pack) dist/js/",
+    "test": "jest --passWithNoTests --updateSnapshot",
+    "watch": "tsc --build -w"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^16",
+    "jest": "^29",
+    "ts-jest": "^29",
+    "typescript": "~5.9.4"
+  },
+  "dependencies": {},
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Amazon Web Services",
+    "url": "https://aws.amazon.com",
+    "organization": true
+  },
+  "homepage": "https://github.com/aws/aws-cdk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aws/aws-cdk.git",
+    "directory": "tools/@aws-cdk/chunkify"
+  }
+}
