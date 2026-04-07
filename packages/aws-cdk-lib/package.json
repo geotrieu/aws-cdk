@@ -41,7 +41,7 @@
       "ts-node ./scripts/verify-imports-shielded.ts",
       "ts-node ./cx-api/build-tools/flag-report.ts",
       "ts-node ../../scripts/check-peer-dependencies.ts",
-      "chunkify --clean"
+      "npx chunkify --clean"
     ]
   },
   "pkglint": {
