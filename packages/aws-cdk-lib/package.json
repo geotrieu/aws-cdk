@@ -475,6 +475,7 @@
     "./aws-s3-notifications": "./aws-s3-notifications/index.js",
     "./aws-s3/mixins": "./aws-s3/lib/mixins/index.js",
     "./aws-s3express": "./aws-s3express/index.js",
+    "./aws-s3files": "./aws-s3files/index.js",
     "./aws-s3objectlambda": "./aws-s3objectlambda/index.js",
     "./aws-s3outposts": "./aws-s3outposts/index.js",
     "./aws-s3tables": "./aws-s3tables/index.js",

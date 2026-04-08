@@ -240,6 +240,7 @@
     "./aws-rum": "./lib/services/aws-rum/index.js",
     "./aws-s3": "./lib/services/aws-s3/index.js",
     "./aws-s3express": "./lib/services/aws-s3express/index.js",
+    "./aws-s3files": "./lib/services/aws-s3files/index.js",
     "./aws-s3objectlambda": "./lib/services/aws-s3objectlambda/index.js",
     "./aws-s3outposts": "./lib/services/aws-s3outposts/index.js",
     "./aws-s3tables": "./lib/services/aws-s3tables/index.js",
